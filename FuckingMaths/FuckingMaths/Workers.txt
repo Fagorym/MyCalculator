@@ -1,6 +1,0 @@
-Worker: Burenin
-Expereince: 2
-Hourly wag: 50
-How much he work: 2400
-Salary: 120000
-
