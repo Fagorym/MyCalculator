@@ -1,10 +1,12 @@
 ﻿#pragma once
 #include<string>
+#include<conio.h>
 namespace Project3 {
 
 	float a;
-	enum eDirection{PLUS, MINUS, MULTIPUL, SLASH };
-	eDirection dir;
+	enum eDirection{NOTHING,PLUS, MINUS, MULTIPUL, SLASH };
+	eDirection dir = NOTHING;
+	
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -13,39 +15,17 @@ namespace Project3 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	int Factorial(int b) {
-
-
-		if (b == 0)
-		return 1;
-
-		else if (b == 1)
-		return 1;
-
-		else
-		b *=  Factorial(b - 1);
-		return b;
-
-
-	}
-	/// <summary>
-	/// Сводка для MyForm
-	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
 	public:
 		MyForm(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: добавьте код конструктора
-			//
+			
 		}
 
 	protected:
-		/// <summary>
-		/// Освободить все используемые ресурсы.
-		/// </summary>
+		
 		~MyForm()
 		{
 			if (components)
@@ -74,6 +54,8 @@ namespace Project3 {
 	private: System::Windows::Forms::Button^ button16;
 	private: System::Windows::Forms::Button^ button17;
 	private: System::Windows::Forms::TextBox^ num1;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ num2;
 	protected:
 
 
@@ -87,16 +69,11 @@ namespace Project3 {
 	protected:
 
 	private:
-		/// <summary>
-		/// Обязательная переменная конструктора.
-		/// </summary>
+		
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
-		/// </summary>
+		
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
@@ -117,6 +94,8 @@ namespace Project3 {
 			this->button15 = (gcnew System::Windows::Forms::Button());
 			this->button16 = (gcnew System::Windows::Forms::Button());
 			this->button17 = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->num2 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -251,12 +230,16 @@ namespace Project3 {
 			// 
 			// num1
 			// 
-			this->num1->Location = System::Drawing::Point(14, 49);
+			this->num1->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->num1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15));
+			this->num1->Location = System::Drawing::Point(14, 59);
 			this->num1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->num1->Name = L"num1";
 			this->num1->ReadOnly = true;
-			this->num1->Size = System::Drawing::Size(279, 21);
+			this->num1->Size = System::Drawing::Size(296, 30);
 			this->num1->TabIndex = 10;
+			this->num1->TabStop = false;
+			this->num1->Text = L"0";
 			this->num1->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
 			this->num1->WordWrap = false;
 			this->num1->TextChanged += gcnew System::EventHandler(this, &MyForm::num1_TextChanged_1);
@@ -338,11 +321,41 @@ namespace Project3 {
 			this->button17->UseVisualStyleBackColor = true;
 			this->button17->Click += gcnew System::EventHandler(this, &MyForm::button17_Click);
 			// 
+			// label1
+			// 
+			this->label1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->label1->AutoEllipsis = true;
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
+			this->label1->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->label1->Location = System::Drawing::Point(218, 29);
+			this->label1->Name = L"label1";
+			this->label1->Padding = System::Windows::Forms::Padding(0, 0, 5, 0);
+			this->label1->Size = System::Drawing::Size(41, 26);
+			this->label1->TabIndex = 18;
+			this->label1->Text = L"44";
+			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->label1->Click += gcnew System::EventHandler(this, &MyForm::label1_Click_1);
+			// 
+			// num2
+			// 
+			this->num2->AutoSize = true;
+			this->num2->Location = System::Drawing::Point(256, 18);
+			this->num2->Name = L"num2";
+			this->num2->Size = System::Drawing::Size(0, 15);
+			this->num2->TabIndex = 19;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->ClientSize = System::Drawing::Size(331, 383);
+			this->Controls->Add(this->num2);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button17);
 			this->Controls->Add(this->button16);
 			this->Controls->Add(this->button15);
@@ -362,11 +375,13 @@ namespace Project3 {
 			this->Controls->Add(this->button1);
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
+			this->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->MaximizeBox = false;
 			this->Name = L"MyForm";
 			this->Text = L"Calculator";
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -390,105 +405,187 @@ private: System::Void num3_TextChanged(System::Object^ sender, System::EventArgs
 private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 	private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-
+		if (num1->Text!="0")
 		num1->Text = num1->Text + L"0";
 
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (num1->Text != "0")
 		num1->Text = num1->Text +  L"1";
+		else num1->Text = L"1";
 	}
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-	num1->Text = num1->Text + L"5";
+	if (num1->Text != "0")
+		num1->Text = num1->Text + L"5";
+	else num1->Text = L"5";
 }
 private: System::Void button15_Click(System::Object^ sender, System::EventArgs^ e) {
 	
-	a = Convert::ToInt32(num1->Text);
+	if (num1->Text == "" || num1->Text == " ") {
 
-	num1->Text = L"+";
+		
+	}
+	else {
 
-	dir = PLUS;
+		label1->Text = num1->Text + L'+';
+
+		a = Convert::ToSingle(num1->Text);
+
+		num1->Text = L"";
+
+		dir = PLUS;
+	}
 }
 private: System::Void button16_Click(System::Object^ sender, System::EventArgs^ e) {
-	a = Convert::ToInt32(num1->Text);
+	if (num1->Text == "" || num1->Text == " ") {
 
-	num1->Text = L"-";
 
-	dir = MINUS;
+	}
+	else {
+
+		label1->Text = num1->Text + L'-';
+
+		a = Convert::ToSingle(num1->Text);
+
+		num1->Text = L"";
+
+		dir = MINUS;
+	}
+	
+
 }
 private: System::Void num1_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (num1->Text != "0")
 	num1->Text = num1->Text +  L"2";
+	else num1->Text = L"2";
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (num1->Text != "0")
 	num1->Text = num1->Text + L"3";
+	else num1->Text = L"3";
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (num1->Text != "0")
 	num1->Text = num1->Text + L"4";
+	else num1->Text = L"4";
 }
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (num1->Text != "0")
 	num1->Text = num1->Text + L"6";
+	else num1->Text = L"6";
 }
 private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
-	num1->Text = num1->Text + L"7";
+	if (num1->Text != "0")
+	num1->Text = num1->Text + L"7";  
+	else num1->Text = L"7";
 }
 private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (num1->Text != "0")
 	num1->Text = num1->Text + L"8";
+	else num1->Text = L"8";
 }
 private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (num1->Text != "0")
 	num1->Text = num1->Text + L"9";
+	else num1->Text = L"9";
 }
 private: System::Void button17_Click(System::Object^ sender, System::EventArgs^ e) {
-	
-	float b;
-	switch (dir)
-	{
-	case Project3::PLUS:
-		num1->Text = num1->Text->Replace("+", "");
-		b = Convert::ToInt32(num1->Text);
-		a += b;
-		break;
-	case Project3::MINUS:
-		num1->Text = num1->Text->Replace("-", "");
-		 b = Convert::ToInt32(num1->Text);
-		a -= b;
-		break;
-	case Project3::MULTIPUL:
-		num1->Text = num1->Text->Replace("*", "");
-	b = Convert::ToInt32(num1->Text);
-		a *= b;
-		break;
-	case Project3::SLASH:
-		num1->Text = num1->Text->Replace("/", "");
-		b = Convert::ToInt32(num1->Text);
-		a /= b;
-		break;
-	default:
-		break;
+	if (num1->Text == "" || num1->Text == " ") {
+
+
 	}
-
-	num1->Text = String::Format("{0}", a); // Вот эту строку  не забывай
-
+	else {
+		float b;
+		switch (dir)
+		{
+		case Project3::PLUS:
+			label1->Text = label1->Text + num1->Text + L"=";
+			num1->Text = num1->Text->Replace("+", "");
+			b = Convert::ToSingle(num1->Text);
+			a += b;
+			break;
+		case Project3::MINUS:
+			label1->Text = label1->Text + num1->Text + L"=";
+			num1->Text = num1->Text->Replace("-", "");
+			b = Convert::ToSingle(num1->Text);
+			a -= b;
+			break;
+		case Project3::MULTIPUL:
+			label1->Text = label1->Text + num1->Text + L"=";
+			num1->Text = num1->Text->Replace("*", "");
+			b = Convert::ToSingle(num1->Text);
+			a *= b;
+			break;
+		case Project3::SLASH:
+			label1->Text = label1->Text + num1->Text + L"=";
+			num1->Text = num1->Text->Replace("/", "");
+			b = Convert::ToSingle(num1->Text);
+			a /= b;
+			break;
+		default:
+			break;
+		}
+		num1->Text = String::Format("{0}", a); // Вот эту строку  не забывай
+		dir = NOTHING;
+		a = b = 0;
+	}
 }
 private: System::Void button14_Click(System::Object^ sender, System::EventArgs^ e) {
-	a = Convert::ToInt32(num1->Text);
 
-	num1->Text = L"/";
+	if (num1->Text == "" || num1->Text == " ") {
 
-	dir = SLASH;
+
+	}
+	else {
+		label1->Text = num1->Text + L'/';
+
+		a = Convert::ToSingle(num1->Text);
+
+		num1->Text = L"";
+
+		dir = SLASH;
+	}
+	
 }
 private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
-	a = Convert::ToInt32(num1->Text);
 
-	num1->Text = L"*";
 
-	dir = MULTIPUL;
+	if (num1->Text == "" || num1->Text == " ") {
 
+
+	}
+	else {
+		label1->Text = num1->Text + L'*';
+
+		a = Convert::ToSingle(num1->Text);
+
+		num1->Text = L"";
+
+		dir = MULTIPUL;
+	}
 
 }
 private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
-	num1->Text = L"";
+	num1->Text = L"0";
+	label1->Text = L"";
+}
+private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	
+
+	}
+	   
+
+		   
+
+	  
+
+
+private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+
+	label1->RightToLeft;
 }
 };
-}
+};
 

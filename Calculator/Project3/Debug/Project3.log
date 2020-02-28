@@ -1,12 +1,5 @@
 ﻿  MyForm.cpp
-C:\Users\charl\source\repos\Project3\Project3\MyForm.h(405,22): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-C:\Users\charl\source\repos\Project3\Project3\MyForm.h(412,22): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-C:\Users\charl\source\repos\Project3\Project3\MyForm.h(448,23): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-C:\Users\charl\source\repos\Project3\Project3\MyForm.h(453,24): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-C:\Users\charl\source\repos\Project3\Project3\MyForm.h(458,22): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-C:\Users\charl\source\repos\Project3\Project3\MyForm.h(463,23): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-C:\Users\charl\source\repos\Project3\Project3\MyForm.h(474,22): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-C:\Users\charl\source\repos\Project3\Project3\MyForm.h(481,22): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-C:\Users\charl\source\repos\Project3\Project3\MyForm.cpp(8,32): warning C4829: Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
+C:\Users\charl\source\repos\Calculator\Project3\MyForm.cpp(8,32): warning C4829: Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
   MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
-  Project3.vcxproj -> C:\Users\charl\source\repos\Project3\Debug\Project3.exe
+  Project3.vcxproj -> C:\Users\charl\source\repos\Calculator\Debug\Project3.exe

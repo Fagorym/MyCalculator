@@ -11,4 +11,19 @@ void main(array<String^>^ arg) {
 
     Project3::MyForm form; //WinFormsTest - имя вашего проекта
     Application::Run(% form);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
