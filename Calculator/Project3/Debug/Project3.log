@@ -1,5 +1,0 @@
-﻿  MyForm.cpp
-C:\Users\charl\source\repos\Calculator\Project3\MyForm.cpp(8,32): warning C4829: Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
-  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
-  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
-  Project3.vcxproj -> C:\Users\charl\source\repos\Calculator\Debug\Project3.exe
