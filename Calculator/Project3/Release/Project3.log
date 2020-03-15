@@ -1,0 +1,15 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(459,5): warning MSB8028: The intermediate directory (Release\) contains files shared from another project (Project3.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  MyForm.cpp
+C:\Users\charl\source\repos\Calculator\Project3\MyForm.h(462,24): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\charl\source\repos\Calculator\Project3\MyForm.h(478,24): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\charl\source\repos\Calculator\Project3\MyForm.h(536,25): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\charl\source\repos\Calculator\Project3\MyForm.h(542,25): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\charl\source\repos\Calculator\Project3\MyForm.h(548,25): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\charl\source\repos\Calculator\Project3\MyForm.h(554,25): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\charl\source\repos\Calculator\Project3\MyForm.h(574,24): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\charl\source\repos\Calculator\Project3\MyForm.h(592,24): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\charl\source\repos\Calculator\Project3\MyForm.h(624,23): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\charl\source\repos\Calculator\Project3\MyForm.cpp(8,32): warning C4829: Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  Project3.vcxproj -> C:\Users\charl\source\repos\Calculator\Release\Calculator.exe
